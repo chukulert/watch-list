@@ -1,0 +1,22 @@
+<div class='nav'>
+  <h1><%= link_to('Movies Lists', lists_path) %></h1>
+  <div>
+  <form>
+    <input name='q' type='search' placeholder='Search'>
+    <button type='Submit'>Search</button>
+  </form>
+  <%= link_to('Add a new List', new_list_path)%>
+  </div>
+</div >
+
+<ul>
+  <% @lists.each do |list| %>
+  <li>
+    <h2><%= list.name%></h2>
+    <div>
+    <span><%= link_to 'More info', list_path(list) %></span>
+    <span><%= link_to 'Edit', edit_list_path(list) %></span>
+    </div>
+  </li>
+  <% end %>
+</ul>

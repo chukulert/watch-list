@@ -1,0 +1,16 @@
+
+<div class='container'>
+  <div>
+    <div class='header'>
+      <h1>List name: <%= @list.name %></h1>
+      <% @list.bookmarks.each do |bookmark|%>
+        <h3>Bookmark comment: <%= bookmark.comment%></h3>
+        <h3>Bookmark movie: <%= bookmark.movie.title%></h3>
+         <p><%= link_to 'Delete bookmark', bookmark_path(bookmark),
+                    method: :delete,
+                     data: { confirm: "Are you sure?" }%></p>
+      <% end %>
+      <%= link_to('Add a bookmark', new_list_bookmark_path(@list)) %>
+    <%= link_to('Back to list', lists_path) %>
+  </div>
+</div>
