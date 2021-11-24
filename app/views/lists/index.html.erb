@@ -8,6 +8,8 @@
   <%= link_to('Add a new List', new_list_path)%>
   </div>
 </div >
+<%= cl_image_tag("bejl2biievokbsirenmg",
+      width: 100, height: 300, crop: :fill) %>
 
 <ul>
   <% @lists.each do |list| %>
